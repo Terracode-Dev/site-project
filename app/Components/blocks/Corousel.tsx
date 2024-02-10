@@ -11,7 +11,7 @@ const Corousel = () => {
             <Image src={backArrow} alt="BackArrow"/>
         </div>
         <div>
-            <Image src={} alt="Prj1"/>
+            
         </div>
         </div>
     )
