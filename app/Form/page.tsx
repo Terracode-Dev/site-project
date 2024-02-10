@@ -23,13 +23,13 @@ export default function Home() {
             <div className="absolute mt-[240px] self-center ">
                 <form action="../api/send" method='GET' className='flex flex-col flex-wrap justify-center items-center'>
                     <div>
-                    <span>  I'm  </span>
+                    <span>  I &apos;m  </span>
                     <input type="text" name="name" id="name" placeholder='Your name' className={inputField}/>
-                    <span>  and i'm here to  </span>
+                    <span>  and i &apos;m here to  </span>
                     <input type="email" name="email" id="email" className={inputField}/>
                     <span>  and you can contact me through  </span>
                     <input type="text" name="message" id="message" className={inputField}/>
-                    <span>  and i'm here to  </span>
+                    <span>  and i &apos;m here to  </span>
                     </div>
                     <button type="submit" className="px-4 w-[100px] mt-[20px] flex justify-center py-1 rounded-lg bg-orngclr border-2 border-orngclr">
                         <Image src={send} alt="send Icon" className='' style={{height:'18px',width:'18px',}} />

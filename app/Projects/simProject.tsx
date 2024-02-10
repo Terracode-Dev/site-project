@@ -24,7 +24,7 @@ export default function SimProject (attr : any) {
             </p>
             <p className="pt-2">
             Moreover, our framework prioritizes scalability and performance, ensuring seamless operation even in large-scale simulations. By leveraging advanced algorithms and optimization techniques, we have engineered a solution that delivers exceptional performance without compromising accuracy or reliability.
-            Security is a top priority in today's interconnected world, and the SimPy Monitoring Framework is designed with robust security measures to safeguard sensitive data. With features such as role-based access control and data encryption, users can trust that their simulation data remains protected from unauthorized access or tampering.
+            Security is a top priority in today &apos;s interconnected world, and the SimPy Monitoring Framework is designed with robust security measures to safeguard sensitive data. With features such as role-based access control and data encryption, users can trust that their simulation data remains protected from unauthorized access or tampering.
             </p>
             As we usher in a new era of industrial simulation, the SimPy Monitoring Framework stands as a testament to our commitment to innovation and excellence. With its powerful features, customizable design, and unmatched performance, it empowers organizations to unlock new possibilities and drive transformative change in their operations.
             <p className="pt-2">

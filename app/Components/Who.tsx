@@ -61,7 +61,7 @@ const Cominfo = (attr : any) => {
             />
             </motion.div>
             <motion.p className="w-[85vw] text-center 2lg:w-[800px]" initial={{opacity:0,x:'50px'}} whileInView={{opacity:1,x:0}} transition={{duration:0.4}}>
-              At <span className='text-orngclr'>Terracode</span> , we're dedicated to providing innovative solutions that address the unique needs and challenges of our clients. Our core focus is on delivering [describe your main products or services] that are designed to streamline processes, enhance efficiency, and drive results.
+              At <span className='text-orngclr'>Terracode</span> , we are dedicated to providing innovative solutions that address the unique needs and challenges of our clients. Our core focus is on delivering [describe your main products or services] that are designed to streamline processes, enhance efficiency, and drive results.
             </motion.p>
           </div>
         </div>
