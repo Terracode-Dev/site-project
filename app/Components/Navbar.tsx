@@ -45,7 +45,7 @@ const btnstr = `${font_1.className} ${attr.show} px-8 py-2 bg-orngclr rounded-md
     let navBurgerStyle = `hidden ${navBurger}` ;
 
     return (
-        <div className='m-0 p-2 z-10 flex flex-col w-[100vw] bg-[#000]'>
+        <div className='m-0 p-2 z-10 flex flex-col w-[100vw] '>
             <nav className='flex items-center justify-between px-[4vw]'>
                <Image src={logo} alt="Terracode Logo" className='mr-4' style={{height:'70px',width:'130px',}} /> 
                <div>

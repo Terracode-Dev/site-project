@@ -55,7 +55,7 @@ export default function Home() {
 
   return (
     <main className=" p-0 flex flex-col gap-10 overflow-hidden" >
-      <div className='fixed z-30'><Navbar func = {navBlur} revert={revertVisibility} visibility={visibility}/></div>
+      <div className='fixed z-30 bg-[#000]'><Navbar func = {navBlur} revert={revertVisibility} visibility={visibility}/></div>
       <div className='mt-[120px]'><Hero blury={blury} func={handleScroll} /></div>
       <HomePage blury={blury} />
       <Services blury={blury}/>
