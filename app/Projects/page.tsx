@@ -7,7 +7,6 @@ import Navbar from '@/app/Components/Navbar';
 import Hero from '@/app/Components/Hero';
 import Footer from '@/app/Components/Footer';
 
-import { animateScroll as scroll } from 'react-scroll';
 
 
 //PROJECTS
@@ -44,30 +43,31 @@ export default function Home() {
     setBlury('');
   }
 
-  let scrollToElement = (elementId : any) => {
-    scroll.scrollTo(elementId, {
-      smooth: true,
-      duration: 500,
-    });
-  };
-  
-      let scrollToLoc = ()=>{
-          scrollToElement('who');
-      }
+
 
       let blured = "blur"
       
+  const handleScroll= () => {
+    const targetElement = document.getElementById('who');
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
 
   return (
     <main className=" p-0 flex flex-col gap-10 overflow-hidden " >
-      <Navbar func = {navBlur} revert={revertVisibility}  visibility={visibility} />
+      <div className='fixed z-30'><Navbar func = {navBlur} revert={revertVisibility}  visibility={visibility} /></div>
       <div className="fixed self-center mt-[100px] z-0">
-      <Hero blury={blured} func={scrollToLoc} show="hidden"/>
+      <Hero blury={blured} func={handleScroll} show="hidden"/>
       </div>
       
 
         {/* Projects come here */}
+    <div className='mt-[120px] flex flex-col '>
       <SimProject blury={blury}/>
+
+      </div>
         
       <Footer blury={blury}/>
 

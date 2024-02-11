@@ -2,7 +2,10 @@
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { NextRequest } from "next/server";
+import { type NextRequest } from 'next/server'
+import { NextApiResponse, NextApiRequest } from "next";
+
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyB8Vr7n-G6BuYG-WbyrdOdGdzmNXv_RISw",
@@ -18,18 +21,45 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 let collectionRef = collection(db, "Orders");
 
-export async function GET(req : NextRequest){
-
+export async function GET(req : NextRequest, res: NextApiResponse){
+  
+  console.log("called the function")
     let recData = req.nextUrl.searchParams
 
     let sendPack = {
-      name: recData.get("name"),
-      email: recData.get("email"),
-      message: recData.get("message"),
+      status : 0, //means the dovcument is yet to examine
+
+      ClientData : {
+        fname: recData.get("first-name"),
+        lname: recData.get("last-name"),
+        email: recData.get("email"),
+        country: recData.get("country"),
+        streetAddress : recData.get("street-address"),
+        city: recData.get("city"),
+        region : recData.get("region"),
+        zipCode : recData.get("postal-code"),
+      },
+      
+      forBusiness : recData.get("business"),
+      forPersonal : recData.get("personal"),
+
+      ClientRequest : {
+        reqCategory: recData.get("service-category"),
+        reqData : recData.get("req-about"),
+      },
+      notifyEmail : recData.get("not-email"),
+      notifyMobile : recData.get("not-mobile"),
     }
+    console.log(sendPack)
+    
+
+    //let sendPack = JSON.parse(req.body)
+    // const data = JSON.parse(req.body);
+    // console.log(data)
 
     const docRef = await addDoc(collectionRef, sendPack);
-    return Response.json({ "data" : `Document written with ID:${docRef.id}` })
+
+    
 };
    
 

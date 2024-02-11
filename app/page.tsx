@@ -13,7 +13,6 @@ import Heroprev from '@/app/Components/Hero';
 
 import Footer from '@/app/Components/Footer';
 import PopForm from '@/app/Components/blocks/popMail';
-import { animateScroll as scroll } from 'react-scroll';
 
 
 
@@ -34,13 +33,6 @@ export default function Home() {
   let [visibility, setVisibility] = useState('hidden');
   let [blury, setBlury] = useState('');
 
-  function makeVisible(){
-    // setVisibility('');
-    // setBlury('blur');
-  
-  
-
-  }
 
   let navBlur = () => {
     setBlury('blur');
@@ -51,22 +43,21 @@ export default function Home() {
     setBlury('');
   }
 
-  let scrollToElement = (elementId : any) => {
-    scroll.scrollTo(elementId, {
-      smooth: true,
-      duration: 500,
-    });
+
+  const handleScroll= () => {
+    const targetElement = document.getElementById('who');
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
   };
   
-      let scrollToLoc = ()=>{
-          scrollToElement('who');
-      }
+
 
   return (
-    <main className=" p-0 flex flex-col gap-10 overflow-hidden " >
-      <Navbar func = {navBlur} revert={revertVisibility} visibility={visibility}/>
-      <Hero blury={blury} func={scrollToLoc} />
-      <HomePage blury={blury} id="us"/>
+    <main className=" p-0 flex flex-col gap-10 overflow-hidden" >
+      <div className='fixed z-30'><Navbar func = {navBlur} revert={revertVisibility} visibility={visibility}/></div>
+      <div className='mt-[120px]'><Hero blury={blury} func={handleScroll} /></div>
+      <HomePage blury={blury} />
       <Services blury={blury}/>
       <Contact blury={blury} visibility={visibility} revert={revertVisibility}/>
       
