@@ -30,12 +30,12 @@ export default function Hero (attr: any) {
                 </motion.div>
             </div>
             {/* big circle */}
-            <div className="absolute z-0 overflow-hidden flex items-center justify-center">
+            <motion.div initial={{y:30,opacity:0}} animate={{y:0,opacity:1}} transition={{ duration: 1 }} className="absolute z-0 overflow-hidden flex items-center justify-center">
             <Lottie animationData={worldBlack} className="absolute  w-[150vh] h-[150vh]  mdm:w-[97vh] mdm:h-[97vh] opacity-60"  />
                 <div className={`rounded-full h-[80vh] w-[80vh] mdm:h-[50vh] mdm:w-[50vh] overflow-hidden p-0 [background:linear-gradient(180deg,_rgba(232,_122,_21,_0.12),_rgba(89,_45,_4,_0.87)_50%,_rgba(248,_121,_3,_0))]`}></div>
                 
 
-            </div>
+            </motion.div>
             
             {/* text */}
 
@@ -43,7 +43,7 @@ export default function Hero (attr: any) {
             <div className={txtStyle}>
                 <motion.section initial={{opacity:0}} animate={{opacity:1}} transition={{ duration: 1 }} className="text-orngclr text-4xl mdm:text-3xl font-normal">IT Solutions and Beyond</motion.section>
                 <motion.section initial={{y:30,opacity:0}} animate={{y:0,opacity:1}} transition={{ duration: 1 }} className="font-semibold text-7xl mdm:text-5xl">Bridging Tommorow with Today</motion.section>
-                <button className="py-3 px-6  bg-[#000000a1] text-black border border-[#000000a1] w-fit font-light rounded-2xl font-bold" onClick={attr.func}>Start Exploring</button>
+                <motion.button initial={{y:30,opacity:0}} animate={{y:0,opacity:1}} transition={{ duration: 1 }} className="py-3 px-6  bg-[#000000a1] text-black border border-[#000000a1] w-fit font-light rounded-2xl font-bold" onClick={attr.func}>Start Exploring</motion.button>
             </div>
         </main>
     );

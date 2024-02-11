@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Lottie from 'lottie-react';
 
+
 //----Components----//
 import Navbar from '@/app/Components/Navbar';
 import Hero from '@/app/Components/Hero';

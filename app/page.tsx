@@ -1,6 +1,8 @@
 'use client'
 import Image from 'next/image';
 import { useState } from 'react';
+import { animate, motion } from 'framer-motion'
+
 
 //----Components----//
 import Navbar from './Components/Navbar';
@@ -55,7 +57,7 @@ export default function Home() {
 
   return (
     <main className=" p-0 flex flex-col gap-10 overflow-hidden" >
-      <div className='fixed z-30 bg-[#000]'><Navbar func = {navBlur} revert={revertVisibility} visibility={visibility}/></div>
+      <motion.div initial={{marginTop:"-100px"}} animate={{marginTop:'0px'}} transition={{ duration: 1.0 }} className='fixed z-30 bg-[#000]'><Navbar func = {navBlur} revert={revertVisibility} visibility={visibility}/></motion.div>
       <div className='mt-[120px]'><Hero blury={blury} func={handleScroll} /></div>
       <HomePage blury={blury} />
       <Services blury={blury}/>

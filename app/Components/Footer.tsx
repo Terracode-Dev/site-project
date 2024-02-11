@@ -11,15 +11,15 @@ import events from "@/public/events.png"
 
 export default function Footer (attr : any) {
     
-    let footerStyle = `${attr.blury} text-[14px] bg-orngclr w-[100%] h-fit py-5 px-5 rounded-t-[60px] flex flex-col  gap-10 justify-center items-center `
+    let footerStyle = `${attr.blury} text-[14px] z-30 bg-orngclr w-[100%] h-fit py-5 px-5 rounded-t-[60px] flex flex-col  gap-10 justify-center items-center `
 
     return(
         <footer className={footerStyle}>
 
             <div className="flex flex-wrap gap-10 justify-center ">
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 items-center">
                     <h1 className="font-bold">Company</h1>
-                    <ul className=" text-[#000]">
+                    <ul className=" text-[#000] flex flex-col items-center">
                         <li>About</li>
                         <li>Members</li>
                         <li>Growth</li>
@@ -30,6 +30,7 @@ export default function Footer (attr : any) {
                     <h1 className="font-bold">Services</h1>
                     <ul className="list-disc text-[#000]">
                     <li>Custom Software Development</li>
+                    <li>AI Solutions</li>
                     <li>Web Development</li>
                     <li>Mobile Application Development</li>
                     <li>UI/UX Design</li>
