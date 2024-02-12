@@ -16,7 +16,7 @@ export default function Footer (attr : any) {
     return(
         <footer className={footerStyle}>
 
-            <div className="flex flex-wrap gap-10 justify-center ">
+            <div className="flex flex-wrap gap-[120px] mdm:gap-[50px] justify-center ">
                 <div className="flex flex-col gap-3 items-center">
                     <h1 className="font-bold">Company</h1>
                     <ul className=" text-[#000] flex flex-col items-center">

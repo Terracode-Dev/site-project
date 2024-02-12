@@ -917,6 +917,18 @@ select {
 .mt-\[80px\] {
   margin-top: 80px;
 }
+.mb-\[70px\] {
+  margin-bottom: 70px;
+}
+.mb-\[80px\] {
+  margin-bottom: 80px;
+}
+.mb-\[120px\] {
+  margin-bottom: 120px;
+}
+.ml-\[72px\] {
+  margin-left: 72px;
+}
 .box-border {
   box-sizing: border-box;
 }
@@ -1137,6 +1149,9 @@ select {
 .gap-6 {
   gap: 1.5rem;
 }
+.gap-\[20px\] {
+  gap: 20px;
+}
 .gap-\[40px\] {
   gap: 40px;
 }
@@ -1148,6 +1163,21 @@ select {
 }
 .gap-xxl {
   gap: 4rem;
+}
+.gap-\[70px\] {
+  gap: 70px;
+}
+.gap-\[80px\] {
+  gap: 80px;
+}
+.gap-\[90px\] {
+  gap: 90px;
+}
+.gap-\[120px\] {
+  gap: 120px;
+}
+.gap-\[100px\] {
+  gap: 100px;
 }
 .gap-x-3 {
   -moz-column-gap: 0.75rem;
@@ -1480,6 +1510,9 @@ select {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+.text-\[3\.5rem\] {
+  font-size: 3.5rem;
+}
 .font-bold {
   font-weight: 700;
 }
@@ -1721,6 +1754,10 @@ body {
     gap: 2.25rem;
   }
 
+  .mdm\:gap-\[50px\] {
+    gap: 50px;
+  }
+
   .mdm\:rounded-\[40px\] {
     border-radius: 40px;
   }
@@ -1783,6 +1820,10 @@ body {
 
   .lgm\:gap-\[3rem\] {
     gap: 3rem;
+  }
+
+  .lgm\:gap-\[60px\] {
+    gap: 60px;
   }
 }
 
@@ -1917,6 +1958,10 @@ body {
     justify-content: flex-start;
   }
 
+  .lg\:gap-\[200px\] {
+    gap: 200px;
+  }
+
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -1932,6 +1977,14 @@ body {
 
   .\32lg\:w-\[800px\] {
     width: 800px;
+  }
+
+  .\32lg\:gap-\[200px\] {
+    gap: 200px;
+  }
+
+  .\32lg\:gap-\[180px\] {
+    gap: 180px;
   }
 
   .\32lg\:pl-7 {

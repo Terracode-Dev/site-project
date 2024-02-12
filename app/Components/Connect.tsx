@@ -25,9 +25,9 @@ export default function Contact_section(attr : any){
     }
     return(
 
-        <div className={`parentAlpha flex flex-col  justify-center p-0 m-0 items-center`}>
+        <div className={`parentAlpha flex flex-col  justify-center p-0 mb-[120px] items-center`}>
 
-            <div className={`${attr.blury} my-[3rem] mx-[3rem] lgm:mx-[1rem] flex p-0 justify-center gap-4 
+            <div className={`${attr.blury} my-[3rem] mx-[3rem] lgm:mx-[1rem] flex p-0 justify-center 2lg:gap-[180px]
             items-center w-fit cnct:w-[90vw] 2lg:pl-7 border-2 border-ashclr  lgm:flex-col items-center overflow-hidden`}
             style={{borderRadius:'100px'}}>
 

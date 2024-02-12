@@ -50,13 +50,6 @@ export async function GET(req : NextRequest, res: NextApiResponse){
       notifyEmail : recData.get("not-email"),
       notifyMobile : recData.get("not-mobile"),
     }
-    console.log(sendPack)
-    
-
-    //let sendPack = JSON.parse(req.body)
-    // const data = JSON.parse(req.body);
-    // console.log(data)
-
     const docRef = await addDoc(collectionRef, sendPack);
 
     

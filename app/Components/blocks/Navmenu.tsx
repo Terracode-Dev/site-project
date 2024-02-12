@@ -30,7 +30,7 @@ export default function Navmenu (attr: any) {
                 <ul className='flex flex-col gap-[40px] py-10 px-20 text-center text-xl' >
                     <a href="../"><li className='hover:text-orngclr cursor-pointer'>Home</li></a>
                     <a href="../../Projects"><li className='hover:text-orngclr cursor-pointer'>Projects</li></a>
-                    <a href=""><li className='hover:text-orngclr cursor-pointer'>Solution</li></a>
+                    <a href="/Form"><li className='hover:text-orngclr cursor-pointer'>Inqueries</li></a>
                     <a href="https://github.com/Terracode-Dev"><li className='hover:text-orngclr cursor-pointer'>Github</li></a>
                     <a href=""><li className='hover:text-orngclr cursor-pointer'>Contact</li></a>
                 </ul>

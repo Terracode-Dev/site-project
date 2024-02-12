@@ -17,12 +17,6 @@
       "static/chunks/main-app.js",
       "static/css/app/Form/page.css",
       "static/chunks/app/Form/page.js"
-    ],
-    "/Projects/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/Projects/page.css",
-      "static/chunks/app/Projects/page.js"
     ]
   }
 }

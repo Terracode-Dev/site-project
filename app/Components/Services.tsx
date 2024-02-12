@@ -71,12 +71,12 @@ const tileImgs = {
 
 export default function Services (attr : any) {
     return (
-        <div className={`${attr.blury} flex flex-col gap-6 items-center lg:items-start py-6 mx-9 mt-[25vh] sm:mt-[200px]`}>
+        <div className={`${attr.blury} flex flex-col gap-[100px] mb-[70px] items-center lg:items-start py-6 mx-9 mt-[25vh] sm:mt-[200px]`}>
 
             <div className='flex gap-2 justify-center lg:justify-start items-center'>
                 
                 
-                <section className='text-white flex  text-[45px] md:text-[35px] sm:text-[28px] pl-6'>  ::
+                <section className='text-white flex  md:text-[40px] text-[3.5rem] sm:text-[35px] pl-6'>  ::
                 
                 <Typewriter
 
