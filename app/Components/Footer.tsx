@@ -6,17 +6,19 @@ import projects from "@/public/projects.png"
 import events from "@/public/events.png"
 
 
+//#48484854 bg
+//#f78300
 
 
 
 export default function Footer (attr : any) {
     
-    let footerStyle = `${attr.blury} text-[14px] z-30 bg-orngclr w-[100%] h-fit py-5 px-5 rounded-t-[60px] flex flex-col  gap-10 justify-center items-center `
+    let footerStyle = `${attr.blury} text-[14px] z-30 bg-orngclr w-[100%] h-fit py-5 px-5 rounded-t-[60px] flex flex-col  gap-10 justify-center items-center  `
 
     return(
         <footer className={footerStyle}>
 
-            <div className="flex flex-wrap gap-[120px] mdm:gap-[50px] justify-center ">
+            <div className="flex flex-wrap gap-[300px] mdm:gap-[50px] justify-center flex-1 ">
                 <div className="flex flex-col gap-3 items-center">
                     <h1 className="font-bold">Company</h1>
                     <ul className=" text-[#000] flex flex-col items-center">
@@ -26,9 +28,9 @@ export default function Footer (attr : any) {
                     </ul>
                 </div>
                 
-                <div className="flex flex-col items-center gap-3">
+                {/* <div className="flex flex-col items-center gap-3">
                     <h1 className="font-bold">Services</h1>
-                    <ul className="list-disc text-[#000]">
+                    <ul className="flex flex-col items-center text-[#000]">
                     <li>Custom Software Development</li>
                     <li>AI Solutions</li>
                     <li>Web Development</li>
@@ -37,9 +39,9 @@ export default function Footer (attr : any) {
                     <li>Consulting Services</li>
                     <li>Quality Assurance and Testing</li>
                     </ul>
-                </div>
+                </div> */}
                 
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 flex-1">
                     <h1 className="font-bold">Resources</h1>
                     <div>
                         <div className="flex gap-3 items-center">
@@ -57,7 +59,7 @@ export default function Footer (attr : any) {
                    
                 </div>
 
-                <div className="flex flex-col items-center gap-3">
+                <div className="flex flex-col items-start gap-3 flex-1">
                     <h1 className="font-bold">Contact Us</h1>
                     <div>
                         <div className="flex gap-3 items-center">
@@ -76,8 +78,21 @@ export default function Footer (attr : any) {
 
             </div>
 
-            <div className="Brand">
-            © 2024 Terracode Inc. All rights reserved.
+            <div className="Brand flex flex-col gap-4 justify-center items-center">
+                    
+            <Image
+              src={'/terralogo.svg'}
+              alt='logo'
+              width={120}
+              height={120}
+          className='w-[50px]'
+
+            />
+
+                    <div>
+                    © 2024 Terracode Inc. All rights reserved.
+                    </div>
+
             </div>
         </footer>
     );

@@ -64,7 +64,7 @@ export default function Home() {
       
 
         {/* Projects come here */}
-    <div className='mt-[120px] flex flex-col '>
+    <div className='mt-[120px] flex flex-col mb-[150px]'>
       <SimProject blury={blury}/>
 
       </div>

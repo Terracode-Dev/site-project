@@ -1,4 +1,6 @@
 'use client'
+import Image from 'next/image';
+
 import { VariantLabels, animate, motion } from 'framer-motion'
 import { useState } from 'react';
 
@@ -8,6 +10,8 @@ import Tile from '@/app/Components/blocks/tile';
 import Typewriter from 'typewriter-effect';
 
 //-----IMAGES---
+
+import buildtxt from '@/public/BUILD.png'
 //--fstile--
 import fstack from '@/public/fstack.png'
 import fstackW from '@/public/fstackW.png'
@@ -101,14 +105,12 @@ export default function Services (attr : any) {
                 
                 ::</section>
 
-               
-
-
-
-
 
             </div>
 
+            <div className='self-start ml-[30px] absolute'>
+                    <Image src={buildtxt} alt="buildText"></Image>
+            </div>
 
             <div className="circles flex gap-2 flex flex-wrap items-center justify-center">
                 <motion.div initial={{ opacity:0,y:50 }} whileInView={{opacity:1,y:0}} transition={{ duration: 1.0 }}>

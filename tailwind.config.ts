@@ -17,7 +17,7 @@ const config: Config = {
       'sm': {'max': '500px'},
       'md': {'min': '501px', 'max': '768px'},
       'lg': {'min': '769px', 'max': '1088px'},
-      '2lg': {'min': '1089px', 'max': '1840px'},
+      '2lg': {'min': '1089px'},
       //'xl': {'min': '1368px', 'max': '1840px'},
     }
     ,
@@ -26,6 +26,7 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+          'terrianImg' : "url('/public/projects.png')",
       },
       spacing: {
         'xxl':'4rem',

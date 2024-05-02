@@ -23,6 +23,9 @@ export default function Contact_section(attr : any){
     const send_form = ()=>{
         rout.push('#');
     }
+
+
+    let icnStyle = `flex justify-center items-center gap-2 w-[30px] h-[30px]`
     return(
 
         <div className={`parentAlpha flex flex-col  justify-center p-0 mb-[120px] items-center`}>
@@ -68,7 +71,7 @@ export default function Contact_section(attr : any){
                     style={{color:'balck',borderColor:'#E87A15',}}>
                         <a href="../Form"
                         className="button_content text-4xl lg:text-3xl">
-                            Email Us
+                            Connect
                         </a>
                     </div>
 
@@ -78,24 +81,24 @@ export default function Contact_section(attr : any){
 
             {/* <ContactForm visibility={attr.visibility} func={attr.revert} /> */}
 
-            <div className={`${attr.blury} socialMedia flex justify-center items-center gap-11 flex-wrap`}>
+            <div className={`${attr.blury} socialMedia flex justify-center items-center gap-[200px] flex-wrap`}>
                 {/* x */}
-                <div className="flex justify-center items-center gap-2">
+                <div className={icnStyle}>
                     <Image src={xTwitter} alt='xTwitterImg'/>
                     <p>@terracode</p>
                 </div>
                 {/* github */}
-                <div className="flex justify-center items-center gap-2">
+                <div className={icnStyle}>
                     <Image src={GitImg} alt='GithubImg'/>
                     <p>@terracode</p>
                 </div>
                 {/* Linkedin */}
-                <div className="flex justify-center items-center gap-2">
+                <div className={icnStyle}>
                     <Image src={LinkedinImg} alt='LinkedInImg'/>
                     <p>@terracode</p>
                 </div>
 
-                <div className="flex justify-center items-center gap-2">
+                <div className={icnStyle}>
                     <Image src={Patreon} alt='PatreonImg'/>
                     <p>@terracode</p>
                 </div>

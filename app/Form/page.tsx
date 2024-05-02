@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import Lottie from 'lottie-react';
+import { collection, addDoc } from "firebase/firestore";
 
 
 //----Components----//
@@ -10,7 +11,9 @@ import Hero from '@/app/Components/Hero';
 import Footer from '@/app/Components/Footer';
 import send from '@/public/Send.png'
 import doneTick from '@/public/Anim/doneTick.json'
+import formTxt from '@/public/Inquiry.png'
 import { PhotoIcon, UserCircleIcon } from '@heroicons/react/20/solid';
+import fbApp from '@/app/fb/firebaseInit';
 
 
 
@@ -31,28 +34,21 @@ export default function Home() {
     let [successShow, setSuccessShow] = useState('hidden')
 
     let handleSubmit = async (event : any) => {
-        event.preventDefault();
-        let formContent = new FormData(event.target);
-        //console.log(Object.fromEntries(formContent))
-        const queryParams = new URLSearchParams();
-  formContent.forEach((value, key) => {
-    queryParams.append(key, value as string);
-  });
-        const queryString = queryParams.toString();
-        console.log(queryString)
-
-        let res = await fetch (`/api/send?${queryString}`, {
-            method : 'GET',
-        });
-
-// POST method TODO: update it....
-        // let res = await fetch ('/api/send', {
-        //     method: 'Post',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body : JSON.stringify(Object.fromEntries(formContent))
-        // })
+      event.preventDefault();
+      const formContent = new FormData(event.target);
+      const formData : any = {};
+    
+      formContent.forEach((value, key) => {
+        formData[key] = value;
+      });
+    
+      try {
+        const docRef = await addDoc(collection(fbApp, "orders"), formData);
+        console.log("Document written with ID: ", docRef.id);
+        formDone(); // Call the function to handle what happens on successful form submission
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
         
     }
 
@@ -63,14 +59,21 @@ export default function Home() {
 
     let mainStyle = `flex flex-col justify-between h-[100vh] p-0 overflow-x-hidden`
     //let formStyle = `${formVisible} ${blury} z-10 absolute mt-[240px] self-center p-10 `
-    let loadFormStyle = `${formVisible} ${blury} mdm:w-[350px] w-[500px] flex flex-col self-center m-3 mb-[100px] z-20`
-    let successStyle = `${successShow} ${blury} flex flex-col justify-center items-center p-2 gap-2`
+    let loadFormStyle = `${formVisible} ${blury} mdm:w-[350px] w-[500px] flex flex-col self-center mt-[80px] m-3 mb-[100px] z-20`
+    let successStyle = `${successShow} ${blury} flex flex-col justify-center items-center p-2 gap-2 z-20 mb-[120px] mt-[100px] sm:mt-[100px]`
 
     let blured = "blur"
-    let inputField = "text-orngclr box-border focus:ring-0  bg-[#0000] border-x-0 border-t-0 border-b-2 border-orngclr mb-[2px] "
+    let inputField = "text-orngclr box-border focus:ring-0  bg-[#0000] border-x-0 border-t-0 border-b-2 border-orngclr mb-[2px] w-full"
     return (
+
+      
         <div className={mainStyle}>
-            <div className="z-30"><Navbar show="hidden" func = {navBlur} revert={revertVisibility}/></div>
+
+        <div className="absolute top-[40vh] left-[60px] sm:hidden">
+          <Image src={formTxt} alt="formText" />
+        </div>
+
+            <div className="z-30 border-b-[0.5px] border-b-[#fff]"><Navbar show="hidden" func = {navBlur} revert={revertVisibility}/></div>
             <div className='fixed self-center mt-[80px]'>
             <Hero blury={blured} show="hidden"/>
             </div>
@@ -113,9 +116,9 @@ export default function Home() {
           <p className="mt-1 text-sm leading-6 text-gray-600">Enter your correct details in the below fields..</p>
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-            <div className="sm:col-span-3">
+            <div className="sm:col-span-6">
               <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
-                First name
+                 Name
               </label>
               <div className="mt-2">
                 <input
@@ -128,7 +131,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="sm:col-span-3">
+            {/* <div className="sm:col-span-3">
               <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900">
                 Last name
               </label>
@@ -141,18 +144,19 @@ export default function Home() {
                   className="block w-full rounded-md border-0 py-1.5 text-orngclr font-medium shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
-            </div>
+            </div> */}
 
-            <div className="sm:col-span-4">
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                Email address
+
+            <div className="sm:col-span-6">
+              <label htmlFor="mnumber" className="block text-sm font-medium leading-6 text-gray-900">
+                Mobile Number
               </label>
               <div className="mt-2">
                 <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
+                  id="mnumber"
+                  name="mnumber"
+                  type="text"
+                  autoComplete="mobile number"
                   className="block w-full rounded-md border-0 py-1.5 text-orngclr font-medium shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -193,65 +197,23 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="col-span-full">
-              <label htmlFor="street-address" className="block text-sm font-medium leading-6 text-gray-900">
-                Street address
+            <div className="sm:col-span-6">
+              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                Email address
               </label>
               <div className="mt-2">
                 <input
-                  type="text"
-                  name="street-address"
-                  id="street-address"
-                  autoComplete="street-address"
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
                   className="block w-full rounded-md border-0 py-1.5 text-orngclr font-medium shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
 
-            <div className="sm:col-span-2 sm:col-start-1">
-              <label htmlFor="city" className="block text-sm font-medium leading-6 text-gray-900">
-                City
-              </label>
-              <div className="mt-2">
-                <input
-                  type="text"
-                  name="city"
-                  id="city"
-                  autoComplete="address-level2"
-                  className="block w-full rounded-md border-0 py-1.5 text-orngclr font-medium shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
+            
 
-            <div className="sm:col-span-2">
-              <label htmlFor="region" className="block text-sm font-medium leading-6 text-gray-900">
-                State / Province / Region
-              </label>
-              <div className="mt-2">
-                <input
-                  type="text"
-                  name="region"
-                  id="region"
-                  autoComplete="address-level1"
-                  className="block w-full rounded-md border-0 py-1.5 text-orngclr font-medium shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
-
-            <div className="sm:col-span-2">
-              <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
-                ZIP / Postal code
-              </label>
-              <div className="mt-2">
-                <input
-                  type="text"
-                  name="postal-code"
-                  id="postal-code"
-                  autoComplete="postal-code"
-                  className="block w-full rounded-md border-0 py-1.5 text-orngclr font-medium shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
 
             <div className="pb-2 sm:w-[80vw]">
           <h2 className="text-base font-semibold leading-7 text-orngclr">Businesss Information</h2>
@@ -310,8 +272,8 @@ export default function Home() {
             This information will be revived by our developers and will soon contact you...
           </p>
 
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-            <div className="sm:col-span-4">
+          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 ">
+            <div className="">
               <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
                 Software Category
               </label>
@@ -340,7 +302,8 @@ export default function Home() {
                   id="about"
                   name="req-about"
                   rows={3}
-                  className="block w-full rounded-md text-orngclr font-medium border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder='eg:- I need an AI solution for my business to handle message tasks automatically'
+                  className="block w-full h-[230px] rounded-md text-orngclr font-medium border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   defaultValue={''}
                 />
               </div>
@@ -416,8 +379,9 @@ export default function Home() {
 
 
 
-
+            <div className="mt-[20vh] z-20">
             <Footer blury={blury}/>
+            </div>
         </div>
     );
 }

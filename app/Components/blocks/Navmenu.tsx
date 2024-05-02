@@ -19,7 +19,7 @@ const font_1 = Source_Code_Pro({
 
 
 export default function Navmenu (attr: any) {
-    const navlist = ` ${font_1.className} ${attr.navPanelVisibility} flex flex-col absolute rounded-2xl border-4` ;//custom added gap style
+    const navlist = ` ${font_1.className} ${attr.navPanelVisibility} flex flex-col absolute rounded-2xl border-4 mr-10` ;//custom added gap style
 
     return (
         <div className={navlist}>

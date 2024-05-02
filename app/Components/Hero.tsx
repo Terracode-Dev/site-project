@@ -1,8 +1,11 @@
 import { animate, motion } from 'framer-motion'
+import Image from 'next/image';
 import Lottie from 'lottie-react';
 import worldAnim from '@/public/Anim/worldScript.json';
 import worldBlack from '@/public/Anim/worldBlack.json';
-
+ import ashBall from '@/public/ashBalls.png';
+ import orngBall from '@/public/us.png';
+ import hometxt from '@/public/HOME.png';
 
 export default function Hero (attr: any) {
 
@@ -36,6 +39,16 @@ export default function Hero (attr: any) {
                 
 
             </motion.div>
+
+            <motion.div initial={{y:30,opacity:0}} animate={{y:0,opacity:1}} transition={{ duration: 1 }} className="absolute self-start flex flex-col justify-between h-[80vh] w-[90vw]">
+                <div className="flex justify-between">
+                    <Image src={hometxt} alt="homeTxt" className=""/>
+                    <Image src={orngBall} alt="orngBall" className="w-[50px]"/>
+                </div>
+                <div className="flex justify-start w-full">
+                    <Image src={ashBall} alt="ashBall" className="w-[50px]"/>
+                </div>
+            </motion.div>
             
             {/* text */}
 
@@ -43,7 +56,7 @@ export default function Hero (attr: any) {
             <div className={txtStyle}>
                 <motion.section initial={{opacity:0}} animate={{opacity:1}} transition={{ duration: 1 }} className="text-orngclr text-4xl mdm:text-3xl font-normal">IT Solutions and Beyond</motion.section>
                 <motion.section initial={{y:30,opacity:0}} animate={{y:0,opacity:1}} transition={{ duration: 1 }} className="font-semibold text-7xl mdm:text-5xl">Bridging Tommorow with Today</motion.section>
-                <motion.button initial={{y:30,opacity:0}} animate={{y:0,opacity:1}} transition={{ duration: 1 }} className="py-3 px-6  bg-[#000000a1] text-black border border-[#000000a1] w-fit font-light rounded-2xl font-bold" onClick={attr.func}>Start Exploring</motion.button>
+                <motion.button initial={{y:30,opacity:0}} animate={{y:0,opacity:1}} transition={{ duration: 1 }} className="py-3 px-6  bg-[#000000a1] text-orngclr border border-[#000000a1] w-fit font-light rounded-2xl font-bold" onClick={attr.func}>Start Exploring</motion.button>
             </div>
         </main>
     );

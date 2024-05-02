@@ -11,10 +11,12 @@ import HomePage from '@/app/Components/Who';
 import Services from '@/app/Components/Services';
 import Contact from '@/app/Components/Connect';
 import Hero from '@/app/Components/Hero';
-import Heroprev from '@/app/Components/Hero';
+import Terrians from './Components/Terrians';
 
 import Footer from '@/app/Components/Footer';
 import PopForm from '@/app/Components/blocks/popMail';
+
+import fbApp from '@/app/fb/firebaseInit';
 
 
 
@@ -27,10 +29,15 @@ import ContactForm from '@/app/Components/blocks/ContactForm';
 
 
 
+
 //----TEMP----// 
 
 
 export default function Home() {
+
+
+
+
 
   let [visibility, setVisibility] = useState('hidden');
   let [blury, setBlury] = useState('');
@@ -57,14 +64,14 @@ export default function Home() {
 
   return (
     <main className=" p-0 flex flex-col gap-10 overflow-hidden" >
-      <motion.div initial={{marginTop:"-100px"}} animate={{marginTop:'0px'}} transition={{ duration: 1.0 }} className='fixed z-30 bg-[#000]'><Navbar func = {navBlur} revert={revertVisibility} visibility={visibility}/></motion.div>
+      <motion.div initial={{marginTop:"-100px"}} animate={{marginTop:'0px'}} transition={{ duration: 1.0 }} className='fixed z-40 bg-[#000] border-b-[0.5px] border-b-[#fff]'><Navbar func = {navBlur} revert={revertVisibility} visibility={visibility}/></motion.div>
       <div className='mt-[120px]'><Hero blury={blury} func={handleScroll} /></div>
       <HomePage blury={blury} />
       <Services blury={blury}/>
       <Contact blury={blury} visibility={visibility} revert={revertVisibility}/>
       
       {/* <ContactForm visibility={visibility} func={revertVisibility} /> */}
-      
+      <Terrians blury={blury}/>
       <Footer blury={blury}/>
 
       
