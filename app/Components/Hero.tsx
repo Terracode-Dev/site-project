@@ -34,7 +34,7 @@ export default function Hero (attr: any) {
             </div>
             {/* big circle */}
             <motion.div initial={{y:30,opacity:0}} animate={{y:0,opacity:1}} transition={{ duration: 1 }} className="absolute z-0 overflow-hidden flex items-center justify-center">
-            <Lottie animationData={worldBlack} className="absolute  w-[150vh] h-[150vh]  mdm:w-[97vh] mdm:h-[97vh] opacity-60"  />
+            {/* <Lottie animationData={worldBlack} className="absolute  w-[150vh] h-[150vh]  mdm:w-[97vh] mdm:h-[97vh] opacity-60"  /> */}
                 <div className={`rounded-full h-[80vh] w-[80vh] mdm:h-[50vh] mdm:w-[50vh] overflow-hidden p-0 [background:linear-gradient(180deg,_rgba(232,_122,_21,_0.12),_rgba(89,_45,_4,_0.87)_50%,_rgba(248,_121,_3,_0))]`}></div>
                 
 

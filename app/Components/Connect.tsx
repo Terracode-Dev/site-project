@@ -81,7 +81,7 @@ export default function Contact_section(attr : any){
 
             {/* <ContactForm visibility={attr.visibility} func={attr.revert} /> */}
 
-            <div className={`${attr.blury} socialMedia flex justify-center items-center gap-[200px] flex-wrap`}>
+            <div className={`${attr.blury} socialMedia flex justify-center terralogo:gap-x-[100px] lgm:gap-x-[150px] gap-x-[200px] flex-wrap w-[80vw]`}>
                 {/* x */}
                 <div className={icnStyle}>
                     <Image src={xTwitter} alt='xTwitterImg'/>

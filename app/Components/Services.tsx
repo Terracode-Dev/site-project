@@ -80,7 +80,7 @@ export default function Services (attr : any) {
             <div className='flex gap-2 justify-center lg:justify-start items-center'>
                 
                 
-                <section className='text-white flex  md:text-[40px] text-[3.5rem] sm:text-[35px] pl-6'>  ::
+                <section className='text-white flex  md:text-[40px] text-[3.5rem] sm:text-[25px] pl-6'>  ::
                 
                 <Typewriter
 
@@ -108,7 +108,7 @@ export default function Services (attr : any) {
 
             </div>
 
-            <div className='self-start ml-[30px] absolute'>
+            <div className='self-start  absolute'>
                     <Image src={buildtxt} alt="buildText"></Image>
             </div>
 
@@ -117,8 +117,8 @@ export default function Services (attr : any) {
                 <Tile 
                     
                     img={tileImgs.fullstack} 
-                    topic="Full-Stack Development" 
-                    desc="Full stack development refers to the practice of developing both the front-end and back-end components of a software application or website. A full stack developer is proficient in multiple programming languages and technologies, allowing them to work on all aspects of a project."
+                    topic="Web Development" 
+                    desc="Our company excels in designing bespoke web applications that cater to specific business requirements. We integrate robust APIs to ensure seamless functionality, enhancing user engagement and operational efficiency across diverse platforms."
                 />
                 </motion.div>
 
@@ -127,7 +127,7 @@ export default function Services (attr : any) {
                     img={tileImgs.mobile} 
                     className="mr-[-20px]"
                     topic="Mobile App Development" 
-                    desc="Mobile development refers to the process of creating software applications or mobile apps that run on mobile devices such as smartphones and tablets. Mobile development is a specialized field with its own set of technologies, platforms, and best practices.."
+                    desc="We are experts in creating state-of-the-art mobile applications, offering both hybrid and native development options. Our approach ensures optimal performance and adaptability, providing tailored solutions that meet the unique demands of your business."
                 />
                 </motion.div>
 
@@ -136,7 +136,7 @@ export default function Services (attr : any) {
                     img={tileImgs.enterprise} 
                     className="mr-[-20px]"
                     topic="Enterprise Solutions" 
-                    desc="Enterprise solutions, also known as enterprise software or business software, refer to a category of software applications and technologies designed to address the specific needs and challenges of large organizations and businesses."
+                    desc="We deliver advanced enterprise solutions that empower businesses to streamline processes, boost productivity, and achieve sustained growth. Our strategic implementations help you navigate complex market dynamics and maintain competitive advantage."
                 />
                 </motion.div>
                 <motion.div initial={{ opacity:0,y:50 }} whileInView={{opacity:1,y:0}} transition={{ duration: 0.5 , delay:0.6 }}>
@@ -144,7 +144,7 @@ export default function Services (attr : any) {
                     img={tileImgs.AI} 
                     className="mr-[-20px]"
                     topic="AI Research & Innovation" 
-                    desc="We are at the forefront of pioneering innovations that challenge the status quo and transform industries. Our team of experts, engineers, and visionaries collaborate to develop cutting-edge solutions that make a meaningful impact. Some key areas of our innovation"
+                    desc="At the forefront of technological advancement, our dedicated AI research and innovation team develops groundbreaking artificial intelligence technologies. These innovations drive industry transformation and set new benchmarks for what technology can achieve."
                 />
                 </motion.div>
             </div>

@@ -21,7 +21,7 @@ const Cominfo = (attr : any) => {
             />
         </div>
 
-        <div className=" md:text-[40px] text-[2.8rem] sm:text-[35px] sm:mb-[70px]">
+        <div className=" md:text-[40px] text-[2.8rem] sm:text-[35px] sm:mb-[70px] z-10">
             <TypewriterComponent 
               options={
                 {
@@ -47,7 +47,7 @@ const Cominfo = (attr : any) => {
         />
 
         {/* logo and text */}
-        <div className='absolute inset-0 flex justify-center items-center'>
+        <div className='absolute inset-0 flex justify-center items-center terraLogo:mt-6'>
 
           <div className="py-[55px] px-4 sm:mb-[80px] flex gap-[5rem] justify-center items-center sm:text-left mdm:pt-[114px] sm:px-10 mdm:flex-col lgm:gap-[3rem]">
             <motion.div initial={{opacity:0,x:'-100px'}} whileInView={{opacity:1,x:0}}>

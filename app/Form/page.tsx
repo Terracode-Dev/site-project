@@ -7,6 +7,7 @@ import { collection, addDoc } from "firebase/firestore";
 
 //----Components----//
 import Navbar from '@/app/Components/Navbar';
+import Navblock from '@/app/Components/Navblock';
 import Hero from '@/app/Components/Hero';
 import Footer from '@/app/Components/Footer';
 import send from '@/public/Send.png'
@@ -377,7 +378,7 @@ export default function Home() {
       </div>
     </form>
 
-
+            <Navblock tile={4}/>
 
             <div className="mt-[20vh] z-20">
             <Footer blury={blury}/>

@@ -12,12 +12,12 @@ export default function Terrians(attr : any) {
     return(
         <div className = {mainStyle}>
             <div className="firstCircleSet self-end"><Image src={Ballset} alt="Ballset" className='w-[170px]'/></div>
-            <div className="image self-center flex gap-10 items-center border-2 border-[#fff] rounded-xl py-[50px] px-[80px] bg-terrianImg">
+            <div className="image self-center flex terraLogo:flex-col gap-10 items-center border-2 border-[#fff] rounded-xl py-[50px] px-[80px] bg-terrianImg">
                 <section className="flex flex-col text-7xl">
                     <p>Meet the</p>
                     <p className="text-orngclr">Terrians</p>
                 </section>
-                <a href="" className="border-2 border-orngclr px-4 py-2 rounded-lg">Meet the Devs</a>
+                <a href="" className="border-2 border-orngclr px-4 py-2 rounded-lg"> Dev Wall </a>
             </div>
             <div className="secondCircleSet self-start"><Image src={Ballset} alt="Ballset" className='w-[170px]'/></div>
         </div>

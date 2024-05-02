@@ -46,8 +46,12 @@ const btnstr = `${font_1.className} ${attr.show} px-8 py-2 bg-orngclr rounded-md
 
     return (
         <div className='m-0 p-2 z-10 flex flex-col w-[100vw] '>
-            <nav className='flex items-center justify-between px-[4vw]'>
-               <Image src={logo} alt="Terracode Logo" className='mr-4' style={{height:'70px',width:'130px',}} /> 
+
+            <div className='hidden terraLogo:block self-end px-4 py-[4px] bg-[rgba(0,0,0,0.06)] rounded-[20px]' style={{ backdropFilter: "blur(25px)" }}>
+            <Image src={logo} alt="Terracode Logo" className='' style={{height:'70px',width:'130px',}} /> 
+            </div>
+            <nav className='flex items-center justify-between px-[4vw] terraLogo:hidden'>
+               <Image src={logo} alt="Terracode Logo" className='mr-4 ' style={{height:'70px',width:'130px',}} /> 
                <div>
                 <ul className={navlist}>
                     <a href="../"><li className='hover:text-orngclr cursor-pointer'>Home</li></a>
@@ -63,7 +67,7 @@ const btnstr = `${font_1.className} ${attr.show} px-8 py-2 bg-orngclr rounded-md
                <Image src={send} alt="send Icon" className='' style={{height:'18px',width:'18px',}} />
                </a>
 
-               <button  onClick={makeNavVisible} className="hidden lgm:block">
+               <button  onClick={makeNavVisible} className="hidden navblockR:block">
                <Image src={menu} alt="Terracode Logo" className={navBurgerStyle} style={{height:'40px',width:'40px',}} /> 
                 </button>
                 <div className='absolute top-[102px] right-[280px] '>

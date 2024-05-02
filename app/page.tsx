@@ -10,6 +10,7 @@ import HomePage from '@/app/Components/Who';
 //import Contact from './Components/Contact';
 import Services from '@/app/Components/Services';
 import Contact from '@/app/Components/Connect';
+import Navblock from './Components/Navblock';
 import Hero from '@/app/Components/Hero';
 import Terrians from './Components/Terrians';
 
@@ -64,11 +65,21 @@ export default function Home() {
 
   return (
     <main className=" p-0 flex flex-col gap-10 overflow-hidden" >
-      <motion.div initial={{marginTop:"-100px"}} animate={{marginTop:'0px'}} transition={{ duration: 1.0 }} className='fixed z-40 bg-[#000] border-b-[0.5px] border-b-[#fff]'><Navbar func = {navBlur} revert={revertVisibility} visibility={visibility}/></motion.div>
+      <motion.div initial={{marginTop:"-100px"}} animate={{marginTop:'0px'}} transition={{ duration: 1.0 }} className='navblock:backdrop-blur-[25px] fixed z-40 navblock:bg-[rgba(0,0,0,0.4)] 2lg:border-b-[0.5px] border-b-[#fff]'>
+        <Navbar func = {navBlur} revert={revertVisibility} visibility={visibility}/>
+      </motion.div>
       <div className='mt-[120px]'><Hero blury={blury} func={handleScroll} /></div>
+
+
+      <Navblock tile={1}/>      
+      
+      
+      
+      
       <HomePage blury={blury} />
       <Services blury={blury}/>
       <Contact blury={blury} visibility={visibility} revert={revertVisibility}/>
+      
       
       {/* <ContactForm visibility={visibility} func={revertVisibility} /> */}
       <Terrians blury={blury}/>

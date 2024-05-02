@@ -12,6 +12,10 @@ const config: Config = {
 
       'ckl': {'max': '1110px'},
       'cnct': {'max': '620px'},
+      
+      'navblock' : {'min' : '500px'},
+      'terraLogo' : {'max' : '500px'},
+      'navblockR' : {'min' : '500px' , 'max': '1088px'},
       'mdm':{'max': '768px'},
       'lgm':{'max': '1088px'},
       'sm': {'max': '500px'},
