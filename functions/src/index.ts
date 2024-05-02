@@ -18,13 +18,13 @@
 //   response.send("Hello from Firebase!");
 // });
 
-import * as functions from 'firebase-functions';
-import next from 'next';
+// import * as functions from 'firebase-functions';
+// import next from 'next';
 
-const nextApp = next({ dev: false, conf: { distDir: '../../.next' } });
-const handle = nextApp.getRequestHandler();
+// const nextApp = next({ dev: false, conf: { distDir: '../../.next' } });
+// const handle = nextApp.getRequestHandler();
 
-export const nextServer = functions.https.onRequest((req, res) => {
-  return nextApp.prepare().then(() => handle(req, res));
-});
+// export const nextServer = functions.https.onRequest((req, res) => {
+//   return nextApp.prepare().then(() => handle(req, res));
+// });
 
